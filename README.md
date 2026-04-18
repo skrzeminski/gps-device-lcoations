@@ -313,6 +313,5 @@ curl http://localhost:8084/api/v1/devices/3fa85f64-5717-4562-b3fc-2c963f66afa2/l
 
 - Database schema is set to `create-drop` — data is **lost on every restart**. Change `spring.jpa.hibernate.ddl-auto` to `validate` or `update` for persistent data.
 - Kafka uses `lz4` compression on the producer side.
-- `device-service` uses batch Kafka listener; `gps-service` uses single-message listener.
 - All `deviceId` values are UUIDs.
 - Timestamps must be ISO 8601 in UTC.
