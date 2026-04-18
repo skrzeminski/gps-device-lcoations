@@ -2,7 +2,7 @@ package com.device.registration.adapter.out.kafka;
 
 import com.device.registration.config.KafkaConfig;
 import com.device.registration.domain.event.DeviceRegisteredEvent;
-import com.device.registration.port.out.DeviceEventPublisherPort;
+import com.device.registration.domain.port.out.DeviceEventPublisherPort;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -24,6 +24,9 @@ public class KafkaDeviceEventPublisher implements DeviceEventPublisherPort {
         this.objectMapper = objectMapper;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void publish(DeviceRegisteredEvent event) {
         var payload = objectMapper.writeValueAsString(event);

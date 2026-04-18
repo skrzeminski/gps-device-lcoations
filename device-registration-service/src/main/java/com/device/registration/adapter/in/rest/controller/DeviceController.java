@@ -2,7 +2,7 @@ package com.device.registration.adapter.in.rest.controller;
 
 import com.device.registration.adapter.in.rest.dto.RegisterDeviceRequest;
 import com.device.registration.adapter.in.rest.dto.RegisterDeviceResponse;
-import com.device.registration.port.in.RegisterDeviceUseCase;
+import com.device.registration.domain.port.in.RegisterDeviceUseCase;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +23,7 @@ public class DeviceController {
 
     @PostMapping
     public ResponseEntity<RegisterDeviceResponse> register(@Valid @RequestBody RegisterDeviceRequest request) {
-        var deviceId = registerDeviceUseCase.register(request.name(), request.type());
+        var deviceId = registerDeviceUseCase.register(request.deviceId(), request.name(), request.type());
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(new RegisterDeviceResponse(deviceId));
