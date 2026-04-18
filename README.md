@@ -299,7 +299,7 @@ curl http://localhost:8084/api/v1/devices/3fa85f64-5717-4562-b3fc-2c963f66afa2/l
 
 ## Tech Stack
 
-- **Java 17+** / **Spring Boot**
+- **Java 21+** / **Spring Boot**
 - **Apache Kafka** — async event-driven communication between services
 - **PostgreSQL** — persistent storage for devices and locations
 - **Spring Data JPA / Hibernate** — ORM (`ddl-auto=create-drop`, recreates schema on startup)
